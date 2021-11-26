@@ -1,0 +1,37 @@
+.nav ul li a{
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav .active {
+  text-decoration: none;
+  background-color: black;
+  padding: 100% 5px;
+  color: #82e5ff;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav ul li{
+  display: inline;
+}
+
+.nav .sair {
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 20px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.nav .sair:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  cursor: pointer;
+}
