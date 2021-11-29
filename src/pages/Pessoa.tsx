@@ -33,9 +33,7 @@ const Pessoa = () => {
             <h1>Lista de Pessoas</h1>
           {
             listPessoas.map(values => (
-              
               <CardPessoa key={values.idPessoa} DeletarPessoa={DeletarPessoa} values={values}/>
-              
             ))
           }
           <div className='cadastrarPessoa'>

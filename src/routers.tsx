@@ -11,6 +11,7 @@ import { AuthProvider } from './context/AuthContext'
 import { PessoaProvider } from "./context/PessoaContext";
 import Home from "./pages/Home";
 import CadastrarPessoa from "./pages/CadastrarPessoa";
+import EditarPessoa from "./pages/EditarPessoa";
 
 const Routers = () => {
   return (
@@ -24,6 +25,7 @@ const Routers = () => {
               <Route path='/login' element={<Login />} />
               <Route path='/pessoa' element={<Pessoa />} />
               <Route path='/cadastrar' element={<CadastrarPessoa />} />
+              <Route path='/editarpessoa' element={<EditarPessoa />} />
             </Routes>
             <Footer />
           </PessoaProvider>
