@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext'
 import { PessoaContext } from '../context/PessoaContext';
 import api from '../api';
 import CardPessoa from '../components/cardPessoa/CardPessoa';
+import { IoMdPersonAdd } from 'react-icons/io';
 
 const Pessoa = () => {
 
@@ -37,7 +38,7 @@ const Pessoa = () => {
             ))
           }
           <div className='cadastrarPessoa'>
-            <button onClick={() => navigate('/cadastrar')}>Cadastrar Nova Pessoa</button>
+            <button onClick={() => navigate('/cadastrar')}><IoMdPersonAdd/></button>
           </div>
         </div>
         : 

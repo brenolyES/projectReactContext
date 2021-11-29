@@ -2,6 +2,7 @@ import { PessoaFormikDTO } from "../model/PessoaDTO"
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 import api from "../api";
 import { useNavigate } from "react-router";
+import InputMask from "react-input-mask";
 
 
 const CadastrarPessoa = () => {
@@ -42,7 +43,7 @@ const CadastrarPessoa = () => {
             <div>
               <label htmlFor="cpf">cpf</label>
               <br />
-              <Field id="cpf" name="cpf" placeholder="cpf" type="text" />
+              <Field id="cpf" name="cpf" placeholder="cpf" type="text" maxLength='11'/>
             </div>
             <div>
               <label htmlFor="dataNascimento">Data de Nascimento</label>

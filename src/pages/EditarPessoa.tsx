@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { PessoaContext } from "../context/PessoaContext";
-import { PessoaFormikDTO, PessoaDTO } from "../model/PessoaDTO"
+import { PessoaFormikDTO } from "../model/PessoaDTO"
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 import api from "../api";
 import { useNavigate } from "react-router";
@@ -15,7 +15,7 @@ const EditarPessoa = () => {
   return (
     <div className='container'>
       <div className='contentCadastrarPessoa'>
-        <h1>Cadastrar nova pessoa</h1>
+        <h1>Editar</h1>
         <Formik
           initialValues={{
             nome: pessoaAEditar.nome,
@@ -47,7 +47,7 @@ const EditarPessoa = () => {
             <div>
               <label htmlFor="cpf">cpf</label>
               <br />
-              <Field id="cpf" name="cpf" placeholder="cpf" type="text" />
+              <Field id="cpf" name="cpf" placeholder="cpf" type="text" maxLength='11'/>
             </div>
             <div>
               <label htmlFor="dataNascimento">Data de Nascimento</label>
