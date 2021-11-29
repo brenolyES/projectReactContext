@@ -1,24 +1,47 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect} from 'react';
 import { AuthContext } from '../context/AuthContext'
+import { PessoaContext } from '../context/PessoaContext';
 import api from '../api';
+import CardPessoa from '../components/cardPessoa/CardPessoa';
 
 const Pessoa = () => {
 
-  const { auth, setActiveLink } = useContext<any>(AuthContext);
+  const { auth, setActiveLink, navigate } = useContext<any>(AuthContext);
+  const { listPessoas, setListPessoas} = useContext(PessoaContext);
+
+  const DeletarPessoa = async (id: number) => {
+    await api.delete(`/pessoa/${id}`);
+    AtualizarLista();
+  }
+
+  const AtualizarLista = async () => {
+    const { data } = await api.get('/pessoa');
+    setListPessoas(data);
+  }
 
   useEffect(() => {
     setActiveLink('/pessoa');
-    (async()=>{
-      const { data } = await api.get('/pessoa');
-      console.log(data);
-    })()
+    AtualizarLista();
   },[])
+
 
   return (
     <div className='container'>
       <div className='contentPessoa'>
         {auth ?
-        <h1>Usuario Logado</h1>
+        <div>
+            <h1>Lista de Pessoas</h1>
+          {
+            listPessoas.map(values => (
+              
+              <CardPessoa key={values.idPessoa} DeletarPessoa={DeletarPessoa} values={values}/>
+              
+            ))
+          }
+          <div className='cadastrarPessoa'>
+            <button onClick={() => navigate('/cadastrar')}>Cadastrar Nova Pessoa</button>
+          </div>
+        </div>
         : 
         <h1>Voce precisa estar logado no sistema</h1>
         }

@@ -36,6 +36,7 @@ const AuthProvider: React.FC<any> = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState('/');
+  
 
   if(loading){
     return(
@@ -45,7 +46,9 @@ const AuthProvider: React.FC<any> = ({ children }) => {
 
 
   return (
-    <AuthContext.Provider value={{auth, handleLogin, handleLogout, activeLink, setActiveLink}}>
+    <AuthContext.Provider value={
+      {auth, handleLogin, handleLogout, 
+      activeLink, setActiveLink, navigate}}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,4 +1,3 @@
-import React from 'react'
 import imgPessoas from '../images/logo-react.png'
 import { useNavigate } from 'react-router'
 import { useContext, useEffect } from 'react'
@@ -6,7 +5,7 @@ import { AuthContext } from '../context/AuthContext'
 
 const Home = () => {
 
-  const navigate =useNavigate();
+  const navigate = useNavigate();
   const {setActiveLink} = useContext<any>(AuthContext);
 
   useEffect(()=>{

@@ -17,7 +17,7 @@ code {
 }
 
 body {
-  background-color: black;
+  background-color: rgb(110, 110, 110);
 }
 
 .container {
@@ -29,7 +29,23 @@ body {
 
 .contentPessoa {
   min-height: calc(100vh - 95px);
+}
+
+.contentPessoa h1 {
   color: white;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.cadastrarPessoa {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/*------------------------------Pessoa------------------------------*/
+
+.contentCadastrarPessoa {
+  min-height: calc(100vh - 95px);
 }
 
 /*------------------------------Login------------------------------*/
