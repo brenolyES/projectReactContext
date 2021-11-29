@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { useState, useEffect} from 'react';
-import api from '../api'
+import {ApiPessoa} from '../api'
 import {LoginDTO} from '../model/LoginDTO'
 import { useNavigate } from "react-router";
 
@@ -11,23 +11,24 @@ const AuthProvider: React.FC<any> = ({ children }) => {
   useEffect(()=>{
     const token = localStorage.getItem('token');
     if(token){
-      api.defaults.headers.common['Authorization'] = token;
+      ApiPessoa.defaults.headers.common['Authorization'] = token;
       setAuth(true);
     }
     setLoading(false);
   },[])
 
   const handleLogin = async (user: LoginDTO) => {
-    const { data } = await api.post('/auth', user);
+    const { data } = await ApiPessoa.post('/auth', user);
     localStorage.setItem('token', data);
-    api.defaults.headers.common['Authorization'] = data;
+    ApiPessoa.defaults.headers.common['Authorization'] = data;
     setAuth(true);
-    navigate('/pessoa');
+    // navigate('/pessoa');
+    window.location.href = '/pessoa';
   }
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    api.defaults.headers.common['Authorization'] = '';
+    ApiPessoa.defaults.headers.common['Authorization'] = '';
     window.location.href = '/';
     setAuth(false);
   }

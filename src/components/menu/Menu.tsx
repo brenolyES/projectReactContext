@@ -16,10 +16,8 @@ const Menu = () => {
         <li>
           {activeLink === '/login' ? <Link className={styles.active} to='/login'>Entrar</Link> : <Link to='/login'>Entrar</Link>}
         </li>
-        <li>
-        {activeLink === '/pessoa' ? <Link className={styles.active} to='/pessoa'>Pessoa</Link> : <Link to='/pessoa'>Pessoa</Link>}
-          
-        </li>
+        {auth && <li>{activeLink === '/endereco' ? <Link className={styles.active} to='/endereco'>Endereço</Link> : <Link to='/endereco'>Endereço</Link>}</li>}
+        {auth && <li>{activeLink === '/pessoa' ? <Link className={styles.active} to='/pessoa'>Pessoa</Link> : <Link to='/pessoa'>Pessoa</Link>}</li>}
         {auth && <li><button className={styles.sair} onClick={handleLogout}>Sair</button></li>}
       </ul>
     </nav>

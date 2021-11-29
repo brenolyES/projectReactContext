@@ -5,10 +5,13 @@ import { LoginDTO } from '../model/LoginDTO'
 
 const Login = () => {
 
-  const { handleLogin, setActiveLink } = useContext<any>(AuthContext);
+  const { handleLogin, setActiveLink, auth } = useContext<any>(AuthContext);
 
   useEffect(()=>{
     setActiveLink('/login');
+    if(auth){
+      window.location.href = '/pessoa';
+    }
   },[])
 
   return (

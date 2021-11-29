@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PessoaContext } from "../context/PessoaContext";
 import { PessoaFormikDTO } from "../model/PessoaDTO"
 import { Formik, Field, Form, FormikHelpers } from 'formik';
-import api from "../api";
+import {ApiPessoa} from "../api";
 import { useNavigate } from "react-router";
 
 
@@ -27,7 +27,7 @@ const EditarPessoa = () => {
             values: PessoaFormikDTO,
             { setSubmitting }: FormikHelpers<PessoaFormikDTO>
             ) => {
-              await api.put(`/pessoa/${pessoaAEditar.idPessoa}`, values);
+              await ApiPessoa.put(`/pessoa/${pessoaAEditar.idPessoa}`, values);
               console.log(values);
               navigate('/pessoa');
               setSubmitting(false);

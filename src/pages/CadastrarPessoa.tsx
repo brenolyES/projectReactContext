@@ -1,8 +1,7 @@
 import { PessoaFormikDTO } from "../model/PessoaDTO"
 import { Formik, Field, Form, FormikHelpers } from 'formik';
-import api from "../api";
+import { ApiPessoa } from "../api";
 import { useNavigate } from "react-router";
-import InputMask from "react-input-mask";
 
 
 const CadastrarPessoa = () => {
@@ -23,7 +22,7 @@ const CadastrarPessoa = () => {
             values: PessoaFormikDTO,
             { setSubmitting }: FormikHelpers<PessoaFormikDTO>
           ) => {
-            await api.post('/pessoa', values);
+            await ApiPessoa.post('/pessoa', values);
             navigate('/pessoa');
             setSubmitting(false);
             console.log(values);
