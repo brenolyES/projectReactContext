@@ -15,7 +15,7 @@
   padding: 10px;
   margin-bottom: 10px;
   width: 50%;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -33,20 +33,24 @@
 
 .card button:first-child {
   background-color: red;
+  border: 1px solid red;
 }
 
 .card button:first-child:hover {
   background-color: rgb(255, 255, 255);
   color: red;
   cursor: pointer;
+  border: 1px solid red;
 }
 
 .card button:last-child {
   background-color: rgb(38, 65, 12);
+  border: 1px solid rgb(38, 65, 12);
 }
 
 .card button:last-child:hover {
   background-color: white;
   color: rgb(38, 65, 12);
   cursor: pointer;
+  border: 1px solid rgb(38, 65, 12);
 }

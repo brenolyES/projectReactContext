@@ -58,10 +58,65 @@ body {
   cursor: pointer;
 }
 
-/*------------------------------Cadastar Pessoa------------------------------*/
+/*------------------------------Cadastar/editar Pessoa------------------------------*/
 
 .contentCadastrarPessoa {
   min-height: calc(100vh - 95px);
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentCadastrarPessoa h1 {
+  text-align: center;
+}
+
+.contentCadastrarPessoa .card {
+  padding: 20px;
+  width: 30%;
+  border-radius: 30px;
+  background-color: #ffffff;
+}
+
+.buttonDiv {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.buttonDiv button{
+  font-size: 30px;
+  padding: 5px 10px;
+  border: none;
+  background-color: black;
+  color: #82e5ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttonDiv button:hover{
+  background-color: #82e5ff;
+  color: black;
+}
+
+.inputDiv {
+  border-bottom: 1px solid black;
+  display: flex;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contentCadastrarPessoa .card input {
+  width: 100%;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.contentCadastrarPessoa .card input:focus {
+  outline: 0;
+  background-color: #f1f1f1;
+  border-radius: 10px;
 }
 
 /*------------------------------Login------------------------------*/

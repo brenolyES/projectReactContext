@@ -59,12 +59,24 @@ const Endereco = () => {
                   <Field id="cep" name="cep" placeholder="cep" maxLength='8' value={jsonCep ? jsonCep.cep : null} />
                 </div>
                 <div>
-                  <label htmlFor="cidade">Cidade</label>
-                  <Field id="cidade" name="cidade" placeholder="cidade" maxLength='8' value={jsonCep ? jsonCep.localidade : null} />
+                  <label htmlFor="logradouro">Logradouro</label>
+                  <Field id="logradouro" name="logradouro" placeholder="logradouro"  value={jsonCep ? jsonCep.logradouro : null} />
                 </div>
                 <div>
                   <label htmlFor="complemento">Complemento</label>
-                  <Field id="complemento" name="complemento" placeholder="complemento" maxLength='8' />
+                  <Field id="complemento" name="complemento" placeholder="complemento" value={jsonCep ? jsonCep.complemento : null} />
+                </div>
+                <div>
+                  <label htmlFor="bairro">Bairro</label>
+                  <Field id="bairro" name="bairro" placeholder="bairro"  value={jsonCep ? jsonCep.bairro : null} />
+                </div>
+                <div>
+                  <label htmlFor="localidade">Localidade</label>
+                  <Field id="localidade" name="localidade" placeholder="localidade"  value={jsonCep ? jsonCep.localidade : null} />
+                </div>
+                <div>
+                  <label htmlFor="uf">UF</label>
+                  <Field id="uf" name="uf" placeholder="uf"  value={jsonCep ? jsonCep.uf : null} />
                 </div>
                 <button type="submit">Cadastrar Endereço</button>
               </div>

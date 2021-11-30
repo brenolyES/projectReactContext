@@ -30,7 +30,7 @@ const Pessoa = () => {
   return (
     <div className='container'>
       <div className='contentPessoa'>
-        <div>
+        <div className='body'>
           <h1>Lista de Pessoas</h1>
           {
             listPessoas.map(values => (
